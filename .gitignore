@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Data files (auto-generated)
+data/*.json
+
+# Lock files
+bun.lockb
+package-lock.json
+
+# TypeScript
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -c \"Add-Type -AssemblyName presentationCore; $p = New-Object System.Windows.Media.MediaPlayer; $p.Volume = 0.1; $p.Open('C:\\Users\\VOTRE_USER\\.claude\\song\\finish.mp3'); $p.Play(); Start-Sleep -Seconds 2\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -c \"Add-Type -AssemblyName presentationCore; $p = New-Object System.Windows.Media.MediaPlayer; $p.Volume = 0.1; $p.Open('C:\\Users\\VOTRE_USER\\.claude\\song\\need-human.mp3'); $p.Play(); Start-Sleep -Seconds 2\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "C:\\Users\\VOTRE_USER\\AppData\\Roaming\\npm\\node_modules\\bun\\bin\\bun.exe C:\\Users\\VOTRE_USER\\.claude\\scripts\\statusline\\src\\statusline-windows.ts",
+    "padding": 0
+  }
+}

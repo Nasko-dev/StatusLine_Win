@@ -1,0 +1,21 @@
+{
+	"name": "claude-statusline",
+	"version": "2.0.0",
+	"description": "Custom statusline for Claude Code on Windows",
+	"module": "src/statusline-windows.ts",
+	"type": "module",
+	"scripts": {
+		"start": "bun run src/statusline-windows.ts",
+		"spend:today": "bun run src/commands/spend-today-win.ts",
+		"spend:month": "bun run src/commands/spend-month-win.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"picocolors": "^1.1.1"
+	}
+}

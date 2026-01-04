@@ -1,0 +1,8 @@
+# Claude Code shortcuts (full permissions)
+# Ajouter ces lignes dans ~/.bashrc
+
+alias cc='claude --dangerously-skip-permissions'
+alias ccc='claude --continue --dangerously-skip-permissions'
+alias ccr='claude --resume --dangerously-skip-permissions'
+
+# Puis recharger avec: source ~/.bashrc
