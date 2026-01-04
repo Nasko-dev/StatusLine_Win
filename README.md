@@ -12,33 +12,36 @@ S: $0.15 66k ⣿⣿⣿⣤⣀⣀⣀⣀⣀⣀ 33% (5m) L: $13.33 ⣿⣶⣀⣀⣀ 3
 ```
 
 ### Ligne 1 - Contexte
-| Element | Description | Couleur |
-|---------|-------------|---------|
-| `main*` | Branche Git + indicateur dirty | Blanc/Magenta |
-| `+8833` | Lignes ajoutées | Vert |
-| `-1892` | Lignes supprimées | Rouge |
-| `~3` | Fichiers staged | Gris |
-| `~5` | Fichiers unstaged | Jaune |
-| `/SAS/my-app` | Chemin du projet | Gris |
-| `Opus 4.5` | Modèle (caché si Sonnet) | Cyan |
+
+| Element       | Description                    | Couleur       |
+| ------------- | ------------------------------ | ------------- |
+| `main*`       | Branche Git + indicateur dirty | Blanc/Magenta |
+| `+8833`       | Lignes ajoutées                | Vert          |
+| `-1892`       | Lignes supprimées              | Rouge         |
+| `~3`          | Fichiers staged                | Gris          |
+| `~5`          | Fichiers unstaged              | Jaune         |
+| `/SAS/my-app` | Chemin du projet               | Gris          |
+| `Opus 4.5`    | Modèle (caché si Sonnet)       | Cyan          |
 
 ### Ligne 2 - Session
-| Element | Description | Couleur |
-|---------|-------------|---------|
-| `$0.15` | Coût de la session | Vert |
-| `66k` | Tokens de contexte | Cyan |
-| `⣿⣿⣿⣤⣀⣀⣀⣀⣀⣀` | Barre contexte (33%) | Progressive |
-| `(5m)` | Durée de la session | Jaune |
-| `L: $13.33` | Coût période 5h | Vert |
-| `⣿⣶⣀⣀⣀ 32%` | Utilisation limite 5h | Progressive |
-| `(2h41m)` | Reset dans X temps | Cyan |
-| `D: $14.35` | Dépense du jour | Vert |
+
+| Element      | Description           | Couleur     |
+| ------------ | --------------------- | ----------- |
+| `$0.15`      | Coût de la session    | Vert        |
+| `66k`        | Tokens de contexte    | Cyan        |
+| `⣿⣿⣿⣤⣀⣀⣀⣀⣀⣀` | Barre contexte (33%)  | Progressive |
+| `(5m)`       | Durée de la session   | Jaune       |
+| `L: $13.33`  | Coût période 5h       | Vert        |
+| `⣿⣶⣀⣀⣀ 32%`  | Utilisation limite 5h | Progressive |
+| `(2h41m)`    | Reset dans X temps    | Cyan        |
+| `D: $14.35`  | Dépense du jour       | Vert        |
 
 ## Installation
 
 ### Prérequis
 
 1. **Bun** - Runtime JavaScript rapide
+
 ```bash
 # Windows (PowerShell)
 powershell -c "irm bun.sh/install.ps1 | iex"
@@ -75,6 +78,7 @@ Ajouter dans `~/.claude/settings.json`:
 > **Important**: Remplacer `VOTRE_USER` par votre nom d'utilisateur Windows.
 
 Pour trouver le chemin de bun:
+
 ```bash
 which bun
 # ou
@@ -112,6 +116,7 @@ cp ~/.claude/scripts/statusline/song/*.mp3 ~/.claude/song/
 ```
 
 Emplacement final:
+
 ```
 C:\Users\VOTRE_USER\.claude\song\
 ├── finish.mp3      # Son quand Claude termine
@@ -165,14 +170,15 @@ alias ccr='claude --resume --dangerously-skip-permissions'
 ```
 
 Puis recharger:
+
 ```bash
 source ~/.bashrc
 ```
 
-| Alias | Description |
-|-------|-------------|
-| `cc` | Lance Claude Code (full perms) |
-| `ccc` | Continue dernière conversation |
+| Alias | Description                          |
+| ----- | ------------------------------------ |
+| `cc`  | Lance Claude Code (full perms)       |
+| `ccc` | Continue dernière conversation       |
 | `ccr` | Choisir une conversation à reprendre |
 
 ## Structure des fichiers
@@ -205,9 +211,11 @@ source ~/.bashrc
 ## Données stockées
 
 ### `data/spend.json`
+
 Historique de toutes les sessions avec coût, durée et date.
 
 ### `data/period-cost.json`
+
 Suivi du coût de la période 5h en cours.
 
 ## Dépannage
@@ -217,6 +225,7 @@ Suivi du coût de la période 5h en cours.
 1. Vérifier que bun est installé: `bun --version`
 2. Vérifier le chemin dans settings.json
 3. Tester manuellement:
+
 ```bash
 echo '{"session_id":"test","transcript_path":"","cwd":"C:/test","model":{"id":"sonnet","display_name":"Sonnet"},"workspace":{"current_dir":"C:/test","project_dir":"C:/test"},"version":"2.0","cost":{"total_cost_usd":0.10,"total_duration_ms":60000}}' | bun ~/.claude/scripts/statusline/src/statusline-windows.ts
 ```
@@ -233,4 +242,4 @@ MIT
 
 ## Auteur
 
-Créé avec Claude Code
+William Le Gall
